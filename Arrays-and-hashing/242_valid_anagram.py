@@ -1,12 +1,11 @@
 import string
 
 
-def isAnagram(s, t):
-    for x in string.ascii_lowercase:
-        print(x)
-
-
-s = 'ccaa'
-t = 'accc'
-
-print(isAnagram(s, t))
+class Solution(object):
+    def isAnagram(self, s, t):
+        res = True
+        for item in string.ascii_lowercase:
+            if s.count(item) != t.count(item):
+                res = False
+                break
+        return res
