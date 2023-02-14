@@ -26,12 +26,12 @@ class Solution:
             second = tmp
 
         # Merge two halfs
-        first, second = head, prev
-        while second:
-            tmp1, tmp2 = first.next, second.next
-            first.next = second
-            second.next = tmp1
-            first, second = tmp1, tmp2
+        left, right = head, prev
+        while right:
+            tmp1, tmp2 = left.next, right.next
+            left.next = right
+            right.next = tmp1
+            left, right = tmp1, tmp2
 
 
 head1 = ListNode(1)
