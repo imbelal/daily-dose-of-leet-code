@@ -1,20 +1,12 @@
 public class Solution {
     public int MinCostClimbingStairs(int[] cost) {
         int n = cost.Length;
-        int[] memo = new int[n];
-        Array.Fill(memo, -1);
+        int[] dp = new int[n+1];
 
-        int cc = Math.Min(Dfs(0), Dfs(1));
-        int Dfs(int i){
-            if(i>=n)
-                return 0;
-            if(memo[i] != -1)
-                return memo[i];
-
-            memo[i] = cost[i] + Math.Min(Dfs(i+1), Dfs(i+2));
-            return memo[i];
+        for(int i=2; i <= n; i++){
+            dp[i] = Math.Min(dp[i-1] + cost[i-1], dp[i-2] + cost[i-2]);
         }
 
-        return cc;
+        return dp[n];
     }
 }
