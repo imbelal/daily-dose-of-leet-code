@@ -14,3 +14,6 @@ public class Solution {
         return dp[nums.Length - 1];
     }
 }
+
+//1,2,3,4
+//dp=1,2,4,6
